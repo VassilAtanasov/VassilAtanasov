@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Hello World</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        #app {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #42b883;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        p {
+            color: #35495e;
+            margin-top: 1rem;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: #42b883;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #35495e;
+        }
+    </style>
+</head>
+<body>
+    index.htm
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <p>{{ description }}</p>
+        <button @click="changeMessage">Click Me!</button>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hello World!',
+                    description: 'Welcome to Vue.js 3'
+                }
+            },
+            methods: {
+                changeMessage() {
+                    this.message = this.message === 'Hello World!' 
+                        ? 'Hello Vue.js!' 
+                        : 'Hello World!';
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
